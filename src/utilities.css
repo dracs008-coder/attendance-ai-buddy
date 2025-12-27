@@ -1,0 +1,39 @@
+/* Custom utility classes copied from GigaEase for gradient text and scrollbar hiding */
+
+@layer utilities {
+  /* Gradient text utilities */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-accent {
+    @apply bg-gradient-to-r from-accent-400 to-accent-600 bg-clip-text text-transparent;
+  }
+
+  /* Hide scrollbars but keep scroll behaviour */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;    /* Firefox */
+  }
+
+  /* Simple fade-up animation utility to mimic hero motion effect */
+  .hero-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: hero-fade-up 0.6s ease-out forwards;
+  }
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
